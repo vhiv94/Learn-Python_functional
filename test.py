@@ -5,13 +5,16 @@ def test(func, test_case):
     print("---------------------------------")
     print(f"Inputs: {input}")
     print(f"Expected: {expected_output}")
-    actual_output = func(*input)
-    print(f"Actual: {actual_output}")
-    if actual_output == expected_output:
-        print("Pass")
-        return True
-    print("Fail")
-    return False
+    try:
+        actual_output = func(*input)
+        print(f"Actual: {actual_output}")
+        if actual_output == expected_output:
+            print("Pass")
+            return True
+        print("Fail")
+        return False
+    except Exception as e:
+        print(e)
 
 
 def run_tests(func, test_cases):

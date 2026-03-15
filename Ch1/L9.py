@@ -1,5 +1,5 @@
 def main_func(line):
-    return f"{line.strip().rstrip().upper().replace('.', '')}..."
+    return f"{line.strip().upper().replace('.', '')}..."
     # stripped = line.strip().rstrip()
     # capitalized = stripped.upper()
     # no_dot = capitalized.replace('.', '')

@@ -11,3 +11,9 @@ def countdown(n):
 # *if n == 0
 # else
 # countdown(n - 1)
+
+## Which line has the recursive call?
+# print(n)
+# if n == 0:
+# else:
+# *countdown(n - 1)

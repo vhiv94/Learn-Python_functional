@@ -6,7 +6,7 @@ def test(func, test_case):
     print(f"Inputs: {input}")
     print(f"Expected: {expected_output}")
     try:
-        actual_output = func(*input, to_string)
+        actual_output = func(*input)
         print(f"Actual: {actual_output}")
         if actual_output == expected_output:
             print("Pass")
@@ -31,11 +31,3 @@ def run_tests(func, test_cases):
     else:
         print("============= FAIL ==============")
     print(f"{passed} passed, {failed} failed")
-
-    
-def to_string(file: dict):
-    return (
-        f"File: {file['filename']}\n"
-        f"Author: {file['author_first_name']} {file['author_last_name']}\n"
-        f"Content: {file['content']}"
-    )

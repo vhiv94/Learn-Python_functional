@@ -1,5 +1,5 @@
 from test import run_tests
-from Ch2.L1 import main_func, submit_cases
+from Ch2.L2 import main_func, submit_cases
 
 def main():
     run_tests(main_func, submit_cases)

@@ -2,6 +2,13 @@ def main_func(file: dict, to_string):
     file_string = to_string(file)
     return f"```\n{file_string}\n```"
 
+    
+# def to_string(file: dict):
+#     return (
+#         f"File: {file['filename']}\n"
+#         f"Author: {file['author_first_name']} {file['author_last_name']}\n"
+#         f"Content: {file['content']}"
+#     )
 
 run_cases = [
     (

@@ -11,3 +11,11 @@
 # You don't know the breadth of the tree (number of items at each level)
 # Trees have too many items in the initial list
 # Loops are hard for my smooth brain
+
+## Imperative loops are allowed in purely functional code
+# *True
+# False
+
+## Loops are used often by good programmers even though they break the academic rules of functional programming
+# *True
+# False

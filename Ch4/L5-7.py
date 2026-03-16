@@ -17,3 +17,8 @@ def countdown(n):
 # if n == 0:
 # else:
 # *countdown(n - 1)
+
+## What would happen if we swapped {countdown(n - 1)} with {countdown(n)} for n > 0?
+# The code would be more elegant
+# It will speed up the function execution
+# *An infinite recursive loop

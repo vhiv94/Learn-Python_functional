@@ -14,7 +14,12 @@ def test(func, test_case):
         print("Fail")
         return False
     except Exception as e:
-        print(e)
+        print(f"Exception raised: {e}")
+        if e == expected_output:
+            print("Pass")
+            return True
+        print("Fail")
+        return False
 
 
 def run_tests(func, test_cases):

@@ -1,11 +1,11 @@
 def add_format(default_formats, new_format):
-    result = default_formats
+    result = dict(default_formats)
     result[new_format] = True
     return result
 
 
 def remove_format(default_formats, old_format):
-    result = default_formats
+    result = dict(default_formats)
     result[old_format] = False
     return result
 

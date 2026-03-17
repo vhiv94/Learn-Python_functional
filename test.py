@@ -4,7 +4,7 @@ def test(func, test_case):
     input = test_case[:-1]
     expected_output = test_case[-1]
     print("---------------------------------")
-    print(f"Inputs: {input}")
+    print(f"Inputs: {str(input)}")
     try:
         result = func(*input)
     except Exception as e:
@@ -25,7 +25,7 @@ def test_nested(func, test_cases):
         input = case[0]
         expected_output = case[-1]
         print("---------------------------------")
-        print(f"Inputs: {input}")
+        print(f"Inputs: {str(input)}")
         try:
             result = func(*input)
         except Exception as e:
@@ -37,5 +37,25 @@ def test_nested(func, test_cases):
             print("Fail")
         else:
             print("Pass")
+    passed = not failed
+    return passed
+
+def test_list(func, test_case):
+    failed = False
+    input = test_case[0]
+    expected_output = test_case[-1]
+    print("---------------------------------")
+    print(f"Inputs: {str(input)}")
+    try:
+        result = func(*input)
+    except Exception as e:
+        result = str(e)
+    print(f"Expected: {expected_output}")
+    print(f"Actual: {result}")
+    if result != expected_output:
+        failed = True
+        print("Fail")
+    else:
+        print("Pass")
     passed = not failed
     return passed

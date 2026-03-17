@@ -1,9 +1,42 @@
-from test import run_tests
-from Ch4.L15 import main_func, submit_cases
+from test import test, test_nested
+from Ch5.L7 import main_func, submit_cases, replace_bad, replace_ellipsis, fix_ellipsis
 
 def main():
-    run_tests(main_func, submit_cases)
+    passed = 0
+    failed = 0
+    for test_case in submit_cases:
+        correct = test(main_func, test_case)
+        if correct:
+            passed += 1
+        else:
+            failed += 1
+    if failed == 0:
+        print("============= PASS ==============")
+    else:
+        print("============= FAIL ==============")
+    print(f"{passed} passed, {failed} failed")
+
+def transform():
+    passed = 0
+    failed = 0
+    for test_case in submit_cases:
+        func1 = test_case[0]
+        func2 = test_case[1]
+        test_cases = test_case[2]
+        print("---------------------------------")
+        print(f"Input functions: {func1.__name__} and {func2.__name__}")
+        func = main_func(func1, func2)
+        correct = test_nested(func, test_cases)
+        if correct:
+            passed += 1
+        else:
+            failed += 1
+    if failed == 0:
+        print("============= PASS ==============")
+    else:
+        print("============= FAIL ==============")
+    print(f"{passed} passed, {failed} failed")
 
 
 if __name__ == "__main__":
-    main()
+    transform()

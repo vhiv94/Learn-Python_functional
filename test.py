@@ -1,38 +1,41 @@
 
 def test(func, test_case):
+    failed = False
     input = test_case[:-1]
     expected_output = test_case[-1]
     print("---------------------------------")
     print(f"Inputs: {input}")
-    print(f"Expected: {expected_output}")
     try:
-        actual_output = func(*input)
-        print(f"Actual: {actual_output}")
-        if actual_output == expected_output:
-            print("Pass")
-            return True
-        print("Fail")
-        return False
+        result = func(*input)
     except Exception as e:
-        print(f"Exception raised: {e}")
-        if e == expected_output:
-            print("Pass")
-            return True
+        result = str(e)
+    print(f"Expected: {expected_output}")
+    print(f"Actual: {result}")
+    if result != expected_output:
+        failed = True
         print("Fail")
-        return False
-
-
-def run_tests(func, test_cases):
-    passed = 0
-    failed = 0
-    for test_case in test_cases:
-        correct = test(func, test_case)
-        if correct:
-            passed += 1
-        else:
-            failed += 1
-    if failed == 0:
-        print("============= PASS ==============")
     else:
-        print("============= FAIL ==============")
-    print(f"{passed} passed, {failed} failed")
+        print("Pass")
+    passed = not failed
+    return passed
+    
+def test_nested(func, test_cases):
+    failed = False
+    for case in test_cases:
+        input = case[0]
+        expected_output = case[-1]
+        print("---------------------------------")
+        print(f"Inputs: {input}")
+        try:
+            result = func(*input)
+        except Exception as e:
+            result = str(e)
+        print(f"Expected: {expected_output}")
+        print(f"Actual:   {result}")
+        if result != expected_output:
+            failed = True
+            print("Fail")
+        else:
+            print("Pass")
+    passed = not failed
+    return passed

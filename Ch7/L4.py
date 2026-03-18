@@ -1,3 +1,5 @@
+from functools import reduce 
+
 '''
 #Asignment#
 Complete the lines_with_sequence function. It should return a series of curried functions
@@ -20,11 +22,18 @@ def lines_with_sequence(char: str):
         sequence: str = char * len
         def with_len(doc):
             lines: list[str] = doc.split("\n")
-            count = 0
-            for line in lines:
-                if sequence in line:
-                    count += 1
-            return count
+            result = reduce(lambda acc, line: acc + int(sequence in line), lines, 0)
+            return result
+
+            # result = list(filter(lambda line: sequence in line, lines))
+            # count = len(result)
+
+            # count = 0
+            # for line in lines:
+            #     if sequence in line:
+            #         count += 1
+            # return count
+        
         return with_len
     return with_char
 

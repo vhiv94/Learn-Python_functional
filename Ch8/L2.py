@@ -1,8 +1,10 @@
 def args_logger (*args, **kwargs):
     for i in range(len(args)):
         print(f"{i}. {args[i]}")
-    for arg in kwargs:
-        print(f"* {arg}: {kwargs[arg]}")
+    
+    sorted_kwargs = dict(sorted(kwargs.items()))
+    for arg in sorted_kwargs:
+        print(f"* {arg}: {sorted_kwargs[arg]}")
 
 
 def test(*args, **kwargs):

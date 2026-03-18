@@ -23,7 +23,6 @@ def file_type_aggregator(func_to_decorate):
 
     return wrapper
 
-
 # solution
 
 @file_type_aggregator

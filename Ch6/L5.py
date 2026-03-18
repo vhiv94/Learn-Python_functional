@@ -30,9 +30,8 @@ def css_styles(initial_styles: dict) -> Callable[[str, str, str], dict]:
     styles: dict = deepcopy(initial_styles)
     def add_style(selector: str, property: str, value: str) -> dict:
         nonlocal styles
-        if selector not in styles:
-            styles[selector] = {}
-        styles[selector][property] = value
+        style = styles.setdefault(selector, {})
+        style[property] = value
         return styles
     return add_style
 

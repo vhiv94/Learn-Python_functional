@@ -10,11 +10,11 @@ You need to define and return a second curried function. I called mine with_leng
 It should accept the final parameter, a doc string, and return the number of lines 
 that contain the sequence.
 
-1. Define the with_length function inside the with_char function, it should accept a doc.
-2. Split the doc into lines.
-3. Use a loop (or if you're feeling fancy, import and use reduce) to count the number of lines that contain the sequence in them.
-4. Return the count from the with_length function.
-5. Return the with_length function from the with_char function.
+1. [x] Define the with_length function inside the with_char function, it should accept a doc.
+2. [x] Split the doc into lines.
+3. [x] Use a loop (or if you're feeling fancy, import and use reduce) to count the number of lines that contain the sequence in them.
+4. [x] Return the count from the with_length function.
+5. [x] Return the with_length function from the with_char function.
 '''
 
 def lines_with_sequence(char: str):

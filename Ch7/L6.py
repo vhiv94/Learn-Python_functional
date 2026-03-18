@@ -3,7 +3,7 @@ def new_resizer(max_width: int, max_height: int):
         if min_width > max_width or min_height > max_height:
             raise Exception("minimum size cannot exceed maximum size")
         def resize_image(desired_width, desired_height):
-            return min(max(desired_width, min_width), max_width), min(max(desired_height, min_height), max_height))
+            return min(max(desired_width, min_width), max_width), min(max(desired_height, min_height), max_height)
         return resize_image
     return set_min_size
 

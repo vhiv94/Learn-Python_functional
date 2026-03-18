@@ -1,11 +1,11 @@
-from test import test, test_nested
-from Ch5.L7 import main_func, submit_cases
+from test import test, test_nested, curry_test
+from Ch7.L1 import main_func, submit_cases
 
 def main():
     passed = 0
     failed = 0
     for test_case in submit_cases:
-        correct = test(main_func, test_case)
+        correct = curry_test(main_func, test_case)
         if correct:
             passed += 1
         else:
@@ -30,4 +30,4 @@ def transform(test_case):
 
 
 if __name__ == "__main__":
-    transform()
+    main()

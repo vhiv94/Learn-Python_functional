@@ -97,3 +97,4 @@ Table of Contents:
     3. Sum Types Review
     4. Sum Types Review
     5. Match (Switch/Case)
+    6. Sum Types Practice

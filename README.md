@@ -92,3 +92,4 @@ Table of Contents:
     7. lru_cache
     8. Decorators Practice
 - Ch9: Sum Types
+    1. Sum Types

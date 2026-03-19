@@ -1,11 +1,11 @@
 # from test import test_nested, curry_test
-from Ch8.L8 import submit_cases, test
+from Ch9.L1 import submit_cases, test
 
 def main():
     passed = 0
     failed = 0
     for test_case in submit_cases:
-        correct = test(*test_case)
+        correct = test(test_case)
         if correct:
             passed += 1
         else:

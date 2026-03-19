@@ -7,14 +7,13 @@ def get_csv_status(status: CSVExportStatus, data: list[list[str | int]]) -> tupl
         case CSVExportStatus.PENDING:
             return "Pending...", list(map(lambda line: list(map(lambda val: str(val), line)), data))
         case CSVExportStatus.PROCESSING:
-            pass
+            return "Processing...", "\n".join(list(map(",".join, data)))
         case CSVExportStatus.SUCCESS:
-            pass
+            return "Success!", data
         case CSVExportStatus.FAILURE:
-            pass
-            return "Unkown error, retrying...", data
+            return "Unknown error, retrying...", "\n".join(map(lambda line: ",".join(map(lambda val: str(val), line)), data))
         case _:
-            raise Exception("unkown export status")
+            raise Exception("unknown export status")
 
 
 run_cases = [

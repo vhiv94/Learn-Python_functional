@@ -93,3 +93,6 @@ Table of Contents:
     8. Decorators Practice
 - Ch9: Sum Types
     1. Sum Types
+    2. Enums
+    3. Sum Types Review
+    4. Sum Types Review

@@ -1,5 +1,9 @@
 from enum import Enum
 
+# Doctype = Enum("Doctype", "PDF TXT DOCX MD HTML")
+# Doctype = Enum("Doctype", "PDF, TXT, DOCX, MD, HTML")
+# Doctype = Enum("Doctype", ["PDF", "TXT", "DOCX", "MD", "HTML"])
+
 class Doctype(Enum):
     PDF = 1
     TXT = 2

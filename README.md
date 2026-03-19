@@ -96,3 +96,4 @@ Table of Contents:
     2. Enums
     3. Sum Types Review
     4. Sum Types Review
+    5. Match (Switch/Case)
